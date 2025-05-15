@@ -8,8 +8,6 @@ This project uses NASA's Kepler exoplanet dataset to classify celestial objects 
 
 **Source:** [Kepler Data on NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/)
 
-**File Path:**
-data/q1_q17_dr25_koi_2025.05.14_22.18.22.csv
 
 
 **Selected Features:**
