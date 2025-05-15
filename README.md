@@ -4,7 +4,7 @@ This project uses NASA's Kepler exoplanet dataset to classify celestial objects 
 
 ---
 
-## 📁 Dataset
+## Dataset
 
 **Source:** [Kepler Data on NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/)
 
@@ -48,7 +48,7 @@ data/q1_q17_dr25_koi_2025.05.14_22.18.22.csv
 
 ---
 
-## 🧠 Model Input
+## Model Input
 
 - **Input Shape:** `(N_samples, 11, 1)`
 - **Output:** Softmax activation with 3 neurons  
@@ -56,14 +56,14 @@ data/q1_q17_dr25_koi_2025.05.14_22.18.22.csv
 
 ---
 
-## 🧪 Dependencies
+## Dependencies
 
 Install required packages:
 
 ```bash
 pip install pandas scikit-learn tensorflow matplotlib
 ```
-## 🏁 How to Run
+## How to Run
 
 - Upload the dataset to your environment
 
@@ -71,7 +71,7 @@ pip install pandas scikit-learn tensorflow matplotlib
 
 - Monitor training and evaluate performance on the test set
 
-## 📊 Evaluation Metrics
+## Evaluation Metrics
 
 - Accuracy
 
