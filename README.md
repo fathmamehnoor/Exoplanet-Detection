@@ -1,4 +1,4 @@
-# 🪐 Exoplanet Classification with 1D CNN (Kepler Dataset)
+# 🪐 Exoplanet Classification with CNN (Kepler Dataset)
 
 This project uses NASA's Kepler exoplanet dataset to classify celestial objects as either **confirmed exoplanets** or **false positives** or **candidate** using a **1D Convolutional Neural Network (CNN)**. The pipeline includes data cleaning, feature selection, scaling, label encoding, and deep learning model training.
 
