@@ -1,2 +1,7 @@
 venv/
 data/
+mlruns/
+outputs/
+scripts/__pycache__/
+prefect_flows/__pycache__/
+notebooks/

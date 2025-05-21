@@ -54,20 +54,72 @@ This project uses NASA's Kepler exoplanet dataset to classify celestial objects 
 
 ---
 
-## Dependencies
+## 🛠️ Setup & Installation
 
-Install required packages:
+### Option 1: Using Docker (Recommended)
 
-```bash
-pip install pandas scikit-learn tensorflow matplotlib
-```
-## How to Run
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
 
-- Upload the dataset to your environment
+2. **Download the dataset**
+   - Download from [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/)
+   - Place the CSV file in the `data/` directory
 
-- Run the Jupyter notebook cells sequentially
+3. **Build and run the Docker container**
+   ```bash
+   docker build -t exoplanet-classification .
+   docker run -p 8888:8888 -p 5000:5000 -p 4200:4200 exoplanet-classification
+   ```
+   - Port 8888: Jupyter Notebook
+   - Port 5000: MLflow UI
+   - Port 4200: Prefect UI
 
-- Monitor training and evaluate performance on the test set
+### Option 2: Local Setup
+
+1. **Clone the repository**
+   ```bash
+   git clone <repository-url>
+   cd <repository-name>
+   ```
+
+2. **Create and activate a virtual environment**
+   ```bash
+   python -m venv venv
+   source venv/bin/activate  # On Windows: venv\Scripts\activate
+   ```
+
+3. **Install dependencies**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Download the dataset**
+   - Download from [NASA Exoplanet Archive](https://exoplanetarchive.ipac.caltech.edu/)
+   - Place the CSV file in the `data/` directory
+
+## 🚀 Running the Project
+
+### Using Prefect Workflows
+
+1. **Run the main workflow**
+
+   ```bash
+   python -m prefect_flows.flows
+   ```
+
+### Monitoring with MLflow
+
+1. **Start the MLflow UI** (if not using Docker)
+   ```bash
+   mlflow ui --port 5000
+   ```
+
+2. **Access the MLflow UI**
+   - Open your browser and navigate to [http://localhost:5000](http://localhost:5000)
+   - View experiment results, metrics, and artifacts
 
 ## Evaluation Metrics
 
