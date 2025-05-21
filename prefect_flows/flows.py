@@ -1,10 +1,22 @@
 from prefect import flow, task
 from scripts.preprocess import load_and_preprocess
 from scripts.train import train
+from pathlib import Path
+
+def get_data_file():
+    data_dir = Path(__file__).resolve().parent.parent / "data"
+    csv_files = list(data_dir.glob("*.csv"))
+    
+    if not csv_files:
+        raise FileNotFoundError("No CSV file found in the 'data/' directory.")
+    elif len(csv_files) > 1:
+        raise ValueError("Multiple CSV files found in 'data/'. Please keep only one.")
+    
+    return str(csv_files[0])
 
 @task
-def preprocess_task():
-    return load_and_preprocess("./data/q1_q17_dr25_koi_2025.05.14_22.18.22.csv")
+def preprocess_task(path: str):
+    return load_and_preprocess(path)
 
 @task
 def train_task(X_y):
@@ -13,8 +25,10 @@ def train_task(X_y):
 
 @flow(name="Exoplanet Detection Pipeline")
 def exoplanet_flow():
-    data = preprocess_task()
+    path = get_data_file()
+    data = preprocess_task(path)
     train_task(data)
 
 if __name__ == "__main__":
+    
     exoplanet_flow()
