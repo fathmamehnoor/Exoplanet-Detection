@@ -81,8 +81,8 @@ This project uses NASA's Kepler exoplanet dataset to classify celestial objects 
 
 1. **Clone the repository**
    ```bash
-   git clone <repository-url>
-   cd <repository-name>
+   git clone https://github.com/fathmamehnoor/Exoplanet-Detection
+   cd Exoplanet-Detection
    ```
 
 2. **Create and activate a virtual environment**
